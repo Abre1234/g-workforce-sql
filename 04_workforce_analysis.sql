@@ -17,3 +17,17 @@ SELECT
 FROM employees
 GROUP BY zone
 ORDER BY average_salary DESC;
+
+--Highest-paid employees
+SELECT
+    employee_id,
+    full_name,
+    position_name,
+    education_level,
+    zone,
+    salary
+FROM employees
+ORDER BY salary DESC
+LIMIT 10;
+
+
