@@ -67,3 +67,21 @@ ORDER BY difference DESC;
 SELECT DISTINCT education_level
 FROM employees
 ORDER BY education_level;
+
+
+--7
+SELECT zone,
+ COUNT(*) AS employee_count
+FROM employees
+GROUP BY zone 
+ORDER BY employee_count DESC;
+
+
+--8  Employees by woreda
+SELECT
+    zone,
+    wereda,
+    COUNT(*) AS employee_count
+FROM employees
+GROUP BY zone, wereda
+ORDER BY zone, employee_count DESC;
