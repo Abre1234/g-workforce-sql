@@ -40,7 +40,7 @@ SELECT
 FROM employees;
 
 
--- 5. Check years of service against hire date
+-- 5. Identify significant years-of-service inconsistencies
 SELECT
     employee_id,
     full_name,
@@ -51,8 +51,19 @@ SELECT
         2
     ) AS calculated_years,
     ROUND(
-        years_of_service - ((CURRENT_DATE - hire_date) / 365.25),
+        ABS(
+            years_of_service -
+            ((CURRENT_DATE - hire_date) / 365.25)
+        ),
         2
     ) AS difference
 FROM employees
+WHERE ABS(
+    years_of_service -
+    ((CURRENT_DATE - hire_date) / 365.25)
+) > 0.10
 ORDER BY difference DESC;
+--6
+SELECT DISTINCT education_level
+FROM employees
+ORDER BY education_level;
