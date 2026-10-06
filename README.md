@@ -1,4 +1,4 @@
-# Government Workforce Analytics — PostgreSQL
+# G Workforce Analytics — PostgreSQL
 
 ## Overview
 
